@@ -1,6 +1,7 @@
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import ContactForm from "../components/ContactForm";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -11,10 +12,13 @@ export default function Home() {
         <section id="about" className="py-24 px-4 w-full bg-blue-100">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
             <div className="relative flex-shrink-0">
-              <img
+              <Image
                 src="/pic.jpg"
                 alt="Dr. Serena Blake"
+                width={350}
+                height={400}
                 className="rounded-2xl w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-[350px] h-auto aspect-[7/8] object-cover border-4 border-white shadow-lg"
+                priority
               />
               <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/80 rounded-xl px-4 py-3 shadow flex flex-col items-start w-[90%]">
                 <span className="font-bold text-base">
@@ -34,7 +38,7 @@ export default function Home() {
                 Angeles, CA
               </span>
               <h2 className="text-4xl font-extrabold mb-6 text-gray-800">
-                Hi, I'm Dr. Serena Blake
+                Hi, I&apos;m Dr. Serena Blake
               </h2>
               <p className="mb-6 text-lg text-gray-800">
                 Dr. Serena Blake is a licensed clinical psychologist (PsyD)
@@ -60,9 +64,11 @@ export default function Home() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-blue-50 rounded-2xl p-6 border border-blue-200 shadow flex flex-col">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=400&h=250&q=80"
                   alt="Anxiety & Stress Management"
+                  width={400}
+                  height={200}
                   className="rounded-xl w-full h-40 object-cover mb-4"
                 />
                 <h3 className="text-2xl font-bold mb-2 text-gray-800">
@@ -78,9 +84,11 @@ export default function Home() {
                 </button>
               </div>
               <div className="bg-blue-50 rounded-2xl p-6 border border-blue-200 shadow flex flex-col">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=facearea&w=400&h=250&q=80"
                   alt="Relationship Counseling"
+                  width={400}
+                  height={200}
                   className="rounded-xl w-full h-40 object-cover mb-4"
                 />
                 <h3 className="text-2xl font-bold mb-2 text-gray-800">
@@ -96,9 +104,11 @@ export default function Home() {
                 </button>
               </div>
               <div className="bg-blue-50 rounded-2xl p-6 border border-blue-200 shadow flex flex-col">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=facearea&w=400&h=250&q=80"
                   alt="Trauma Recovery"
+                  width={400}
+                  height={200}
                   className="rounded-xl w-full h-40 object-cover mb-4"
                 />
                 <h3 className="text-2xl font-bold mb-2 text-gray-800">
@@ -113,9 +123,11 @@ export default function Home() {
                 </button>
               </div>
             </div>
-            <img
+            <Image
               src="https://main.d1hiqvipguwtuq.amplifyapp.com/_next/image?url=%2Fassets%2Fflower_green.webp&w=1080&q=75"
               alt="Decorative plant"
+              width={200}
+              height={200}
               className="hidden lg:block absolute bottom-[-144px] z-[-1] right-[-150px] w-[200px] h-[200px] pointer-events-none select-none"
               style={{ zIndex: 0 }}
             />

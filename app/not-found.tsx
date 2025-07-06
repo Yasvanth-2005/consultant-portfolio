@@ -28,24 +28,9 @@ const NotFound: React.FC = () => {
         Sorry, the page you are looking for does not exist or has been moved.
       </p>
       <Link href="/">
-        <a
-          style={{
-            display: "inline-block",
-            padding: "0.75rem 1.5rem",
-            background: "#2563eb",
-            color: "#fff",
-            borderRadius: "0.5rem",
-            textDecoration: "none",
-            fontWeight: 600,
-            fontSize: "1rem",
-            boxShadow: "0 2px 8px rgba(30,41,59,0.08)",
-            transition: "background 0.2s",
-          }}
-          onMouseOver={(e) => (e.currentTarget.style.background = "#1d4ed8")}
-          onMouseOut={(e) => (e.currentTarget.style.background = "#2563eb")}
-        >
+        <span className="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold text-base shadow hover:bg-blue-700 transition-colors duration-200 cursor-pointer">
           Go Home
-        </a>
+        </span>
       </Link>
     </div>
   );

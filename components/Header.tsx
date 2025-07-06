@@ -1,6 +1,5 @@
 "use client";
 
-import { NavigationMenu } from "./ui/navigation-menu";
 import { Button } from "./ui/button";
 import { Star, Phone, MapPin } from "lucide-react";
 
