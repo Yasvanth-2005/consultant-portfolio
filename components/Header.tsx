@@ -66,7 +66,7 @@ export default function Header() {
             </div>
           </div>
           {/* Right: Button */}
-          <div className="flex items-center min-w-[140px] justify-end">
+          <div className="flex items-center min-w-[20px] justify-end">
             <Button
               className="ml-2 md:ml-4 hidden md:inline-flex text-sm md:text-base cursor-pointer"
               size="lg"

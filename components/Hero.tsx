@@ -101,6 +101,14 @@ export default function Hero() {
           <Button
             size="lg"
             className="text-base md:text-lg px-6 md:px-8 py-4 md:py-6 shadow-lg cursor-pointer"
+            onClick={(e) => {
+              e.preventDefault();
+              setTimeout(() => {
+                const el = document.getElementById("contact");
+                if (el)
+                  el.scrollIntoView({ behavior: "smooth", block: "start" });
+              }, 10);
+            }}
           >
             Start Healing Today
           </Button>
