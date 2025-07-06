@@ -2,6 +2,7 @@
 
 import { Button } from "./ui/button";
 import { Star, Phone, MapPin } from "lucide-react";
+import { useRef, useEffect } from "react";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -11,9 +12,22 @@ const navLinks = [
 ];
 
 export default function Header() {
+  const detailsRef = useRef<HTMLDetailsElement>(null);
+
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (detailsRef.current && detailsRef.current.open) {
+        if (!detailsRef.current.contains(e.target as Node)) {
+          detailsRef.current.open = false;
+        }
+      }
+    }
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, []);
+
   return (
     <>
-      {/* Yellow bar with phone and address */}
       <div className="w-full bg-yellow-100 text-xs md:text-sm flex justify-between items-center px-2 md:px-8 py-1 font-medium border-b border-yellow-200">
         <div className="w-full max-w-7xl mx-auto flex justify-between items-center px-2 md:px-8 py-1 font-medium ">
           <span className="flex items-center gap-1">
@@ -38,7 +52,6 @@ export default function Header() {
         style={{ marginTop: 0 }}
       >
         <nav className="max-w-7xl mx-auto flex items-center justify-between px-2 md:px-8 py-2 md:py-3">
-          {/* Left: Logo and subtitle */}
           <div className="flex flex-col items-start justify-center min-w-[180px]">
             <span className="font-bold text-lg md:text-xl tracking-tight cursor-pointer">
               Dr. Serena Blake, PsyD
@@ -47,7 +60,6 @@ export default function Header() {
               Clinical Psychologist
             </span>
           </div>
-          {/* Center: Nav */}
           <div className="flex-1 flex justify-center">
             <div className="hidden md:flex gap-6 items-center">
               {navLinks.map((link, idx) => (
@@ -66,7 +78,6 @@ export default function Header() {
               ))}
             </div>
           </div>
-          {/* Right: Button */}
           <div className="flex items-center min-w-[20px] justify-end">
             <Button
               className="ml-2 md:ml-4 hidden md:inline-flex text-sm md:text-base cursor-pointer"
@@ -80,9 +91,8 @@ export default function Header() {
               Get Started
             </Button>
           </div>
-          {/* Mobile Hamburger */}
           <div className="md:hidden ml-2">
-            <details className="relative">
+            <details className="relative" ref={detailsRef}>
               <summary className="list-none cursor-pointer p-2 rounded hover:bg-accent">
                 <span className="block w-6 h-0.5 bg-foreground mb-1"></span>
                 <span className="block w-6 h-0.5 bg-foreground mb-1"></span>
@@ -98,6 +108,7 @@ export default function Header() {
                       e.preventDefault();
                       const el = document.querySelector(link.href);
                       if (el) el.scrollIntoView({ behavior: "smooth" });
+                      if (detailsRef.current) detailsRef.current.open = false;
                     }}
                   >
                     {link.label}
@@ -108,6 +119,7 @@ export default function Header() {
                   onClick={() => {
                     const el = document.querySelector("#contact");
                     if (el) el.scrollIntoView({ behavior: "smooth" });
+                    if (detailsRef.current) detailsRef.current.open = false;
                   }}
                 >
                   <Star className="mr-1 w-4 h-4" />

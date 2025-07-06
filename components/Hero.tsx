@@ -25,7 +25,7 @@ export default function Hero() {
         setCurrent((prevIdx) => (prevIdx + 1) % highlights.length);
         setAnimating(false);
         setPrev(null);
-      }, 400); // animation duration
+      }, 400);
     }, 2200);
     return () => {
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
