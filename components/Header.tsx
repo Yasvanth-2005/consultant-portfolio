@@ -16,21 +16,23 @@ export default function Header() {
     <>
       {/* Yellow bar with phone and address */}
       <div className="w-full bg-yellow-100 text-xs md:text-sm flex justify-between items-center px-2 md:px-8 py-1 font-medium border-b border-yellow-200">
-        <span className="flex items-center gap-1">
-          <Phone className="w-4 h-4 md:w-5 md:h-5" />
-          <a href="tel:(323)555-0192" className="cursor-pointer">
-            (323) 555-0192
-          </a>
-        </span>
-        <span className="flex items-center gap-1">
-          <MapPin className="w-4 h-4 md:w-5 md:h-5" />
-          <span className="cursor-pointer">
-            <span className="hidden md:inline">
-              1287 Maplewood Drive, Los Angeles, CA 90026
-            </span>
-            <span className="inline md:hidden">Los Angeles, CA</span>
+        <div className="w-full max-w-7xl mx-auto flex justify-between items-center px-2 md:px-8 py-1 font-medium ">
+          <span className="flex items-center gap-1">
+            <Phone className="w-4 h-4 md:w-5 md:h-5" />
+            <a href="tel:(323)555-0192" className="cursor-pointer">
+              (323) 555-0192
+            </a>
           </span>
-        </span>
+          <span className="flex items-center gap-1">
+            <MapPin className="w-4 h-4 md:w-5 md:h-5" />
+            <span className="cursor-pointer">
+              <span className="hidden md:inline">
+                1287 Maplewood Drive, Los Angeles, CA 90026
+              </span>
+              <span className="inline md:hidden">Los Angeles, CA</span>
+            </span>
+          </span>
+        </div>
       </div>
       <header
         className="sticky top-0 left-0 w-full z-50 bg-white border-b border-border shadow-sm"
